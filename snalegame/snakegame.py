@@ -2,7 +2,6 @@ import psycopg2
 import pygame
 import random
 
-# --- Database Connection --- #
 conn = psycopg2.connect(
     dbname="snake_db",
     user="postgres",
@@ -38,7 +37,6 @@ def save_progress(user_id, level, score):
     )
     conn.commit()
 
-# --- Game Setup --- #
 pygame.init()
 screen = pygame.display.set_mode((640, 480))
 pygame.display.set_caption("Snake Game")
@@ -54,7 +52,6 @@ snake_dir = (20, 0)
 food = (300, 300)
 paused = False
 
-# Level settings
 speed = 3 + level
 walls = []
 if level >= 2:
